@@ -10,8 +10,6 @@ function computerPlay() {
     }
 }
 
-console.log (computerPlay())
-
 function roundResult(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "Rock") {
         return "Tie! Rock";
@@ -39,6 +37,28 @@ function roundResult(playerSelection, computerSelection) {
 const playerSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
 const computerSelection = computerPlay();
 alert(roundResult(playerSelection, computerSelection));
+
+/* adding for loop later use
+for (let playerWin = 0; playerWin < 6; playerWin++) {
+
+}
+*/
+
+let playerWin = 0;
+let compWin = 0;
+// if "you win" then playwin + 1
+if (roundResult(playerSelection, computerSelection).slice(0, 7) === "You Win") {
+    playerWin = playerWin + 1;
+}
+// if "you lose" then compwin + 1
+if (roundResult(playerSelection, computerSelection).slice(0, 7) === "You Los") {
+    compWin = compWin + 1;
+}
+
+console.log(playerWin)
+console.log(compWin)
+
+
 
 // if player wins 5 times, return you win
 // if computer wins 5 times, return you lose
