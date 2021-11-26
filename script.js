@@ -11,58 +11,53 @@ function computerPlay() {
 }
 
 function roundResult(playerSelection, computerSelection) {
+
     if (playerSelection === "rock" && computerSelection === "Rock") {
-        return "Tie! Rock";
+        alert("Tie! Rock");
     } else if (playerSelection === "rock" && computerSelection === "Paper") {
-        return "You Lose! Paper beats Rock";
+        alert("You Lose! Paper beats Rock");
+        return compPoint += 1;
     } else if (playerSelection === "rock" && computerSelection === "Scissors") {
-        return "You Win! Rock crushes Scissors";
+        alert("You Win! Rock crushes Scissors");
+        return playerPoint += 1
     } else if (playerSelection === "paper" && computerSelection === "Rock") {
-        return "You Win! Paper suffocates Rock";
+        alert("You Win! Paper suffocates Rock");
+        return playerPoint += 1;
     } else if (playerSelection === "paper" && computerSelection === "Paper") {
-        return "Tie! Paper";
+        alert("Tie! Paper");
     } else if (playerSelection === "paper" && computerSelection === "Scissors") {
-        return "You Lose! Scissors cut Paper";
+        alert("You Lose! Scissors cut Paper");
+        return compPoint += 1;
     } else if (playerSelection === "scissors" && computerSelection === "Rock") {
-        return "You lose! Rock crushes Scissors";
+        alert("You lose! Rock crushes Scissors")
+        return compPoint += 1;
     } else if (playerSelection === "scissors" && computerSelection === "Paper") {
-        return "You Win! Scissors cut Paper";
+        alert("You Win! Scissors cut Paper")
+        return playerPoint += 1;
     } else if (playerSelection === "scissors" && computerSelection === "Scissors") {
-        return "Tie! Scissors";
+        alert("Tie! Scissors");
     } else {
         return "Please type either Rock, Paper, or Scissors, it's case insensitive! (:"
     }
 }
-;;
-const playerSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
-const computerSelection = computerPlay();
 
-function winRound() {
-    // if "you win" then playwin + 1
-    if (roundResult(playerSelection, computerSelection).slice(0, 7) === "You Win") {
-        alert(roundResult(playerSelection, computerSelection))
-        playerWin = playerWin + 1;
-    }
-    // if "you lose" then compwin + 1
-    if (roundResult(playerSelection, computerSelection).slice(0, 7) === "You Los") {
-        alert(roundResult(playerSelection, computerSelection))
-        compWin = compWin + 1;
-    }
-}
-// if player wins 5 times, return you win
-// if computer wins 5 times, return you lose
-for (let i = 0; i < 11; i++) {
-    let playerWin = 0;
-    let compWin = 0;
-    computerPlay();
-    winRound();
+let playerPoint = 0;
+let compPoint = 0;
+
+for (i = 0; ; i++) { //this code creates neverending loops because the end condition intentionally left blank
+    const playerSelection = prompt("rock paper scissors?").toLowerCase();
+    console.log(playerSelection);
+    const computerSelection = computerPlay();
     roundResult(playerSelection, computerSelection);
-    if (playerWin === 5) {
-        prompt("Player Win")
-        break
+    console.log(playerPoint);
+    console.log(compPoint);
+
+    if (playerPoint === 5) {
+        alert("Player Win");
+        break;
     }
-    if (compWin === 5) {
-        prompt("Computer Win")
-        break
+    if (compPoint === 5) {
+        alert("Computer Win");
+        break;
     }
 }
