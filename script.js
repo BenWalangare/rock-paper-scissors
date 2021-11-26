@@ -1,3 +1,5 @@
+// step 1: we create the function for the computer behaviour
+// below is the computer behaviour
 function computerPlay() {
     num = Math.ceil(Math.random() * 3)
 
@@ -10,8 +12,9 @@ function computerPlay() {
     }
 }
 
+// step 2: we create the rule of the game
+// this function dictates the rule of the game
 function roundResult(playerSelection, computerSelection) {
-
     if (playerSelection === "rock" && computerSelection === "Rock") {
         alert("Tie! Rock");
     } else if (playerSelection === "rock" && computerSelection === "Paper") {
@@ -41,17 +44,19 @@ function roundResult(playerSelection, computerSelection) {
     }
 }
 
+// putting the variable outside for loop to increments 
 let playerPoint = 0;
 let compPoint = 0;
 
-for (i = 0; ; i++) { //this code creates neverending loops because the end condition intentionally left blank
+// step 3: we are looping the game and put the score outside the loop up until the player or comp meet the first 5 and it breaks the loop
+for (i = 0; ; i++) { // this code creates neverending loops because the end condition intentionally left blank
     const playerSelection = prompt("rock paper scissors?").toLowerCase();
     console.log(playerSelection);
     const computerSelection = computerPlay();
     roundResult(playerSelection, computerSelection);
     console.log(playerPoint);
     console.log(compPoint);
-
+    // below are if condition, it calculates the variable and will break the loops if it meets its condition
     if (playerPoint === 5) {
         alert("Player Win");
         break;
