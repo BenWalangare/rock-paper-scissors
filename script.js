@@ -33,40 +33,36 @@ function roundResult(playerSelection, computerSelection) {
         return "Please type either Rock, Paper, or Scissors, it's case insensitive! (:"
     }
 }
-
+;;
 const playerSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
 const computerSelection = computerPlay();
-alert(roundResult(playerSelection, computerSelection));
 
-/* adding for loop later use
-for (let playerWin = 0; playerWin < 6; playerWin++) {
-
+function winRound() {
+    // if "you win" then playwin + 1
+    if (roundResult(playerSelection, computerSelection).slice(0, 7) === "You Win") {
+        alert(roundResult(playerSelection, computerSelection))
+        playerWin = playerWin + 1;
+    }
+    // if "you lose" then compwin + 1
+    if (roundResult(playerSelection, computerSelection).slice(0, 7) === "You Los") {
+        alert(roundResult(playerSelection, computerSelection))
+        compWin = compWin + 1;
+    }
 }
-*/
-
-let playerWin = 0;
-let compWin = 0;
-// if "you win" then playwin + 1
-if (roundResult(playerSelection, computerSelection).slice(0, 7) === "You Win") {
-    playerWin = playerWin + 1;
-}
-// if "you lose" then compwin + 1
-if (roundResult(playerSelection, computerSelection).slice(0, 7) === "You Los") {
-    compWin = compWin + 1;
-}
-
-console.log(playerWin)
-console.log(compWin)
-
-
-
 // if player wins 5 times, return you win
 // if computer wins 5 times, return you lose
-
-function game() {
+for (let i = 0; i < 11; i++) {
+    let playerWin = 0;
+    let compWin = 0;
+    computerPlay();
+    winRound();
+    roundResult(playerSelection, computerSelection);
     if (playerWin === 5) {
-        return "You win the game!";
-    } else if (compWin === 5) {
-        return "You lose the game, better luck next time"
+        prompt("Player Win")
+        break
+    }
+    if (compWin === 5) {
+        prompt("Computer Win")
+        break
     }
 }
