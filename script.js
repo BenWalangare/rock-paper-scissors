@@ -40,7 +40,7 @@ function roundResult(playerSelection, computerSelection) {
     } else if (playerSelection === "scissors" && computerSelection === "Scissors") {
         alert("Tie! Scissors");
     } else {
-        return "Please type either Rock, Paper, or Scissors, it's case insensitive! (:"
+        alert("Please type either Rock, Paper, or Scissors, it's case insensitive! (:")
     }
 }
 
@@ -49,7 +49,7 @@ let playerPoint = 0;
 let compPoint = 0;
 
 // step 3: we are looping the game and put the score outside the loop up until the player or comp meet the first 5 and it breaks the loop
-for (i = 0; ; i++) { // this code creates neverending loops because the end condition intentionally left blank
+for (;;) { // this is the proper code to create infinite loop 
     const playerSelection = prompt("Rock, Paper, or Scissors? \n" + "The current score for Player = " +
                             playerPoint + " and for Computer = " + compPoint).toLowerCase();
     console.log(playerSelection);
