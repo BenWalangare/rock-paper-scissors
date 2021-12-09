@@ -14,10 +14,14 @@ function computerPlay() {
 
 function gameFinish() {
     if (playerPoint === 5) {
-        return alert("Player Win");
+        console.log("Player Win");
+        console.log(playerPoint, compPoint)
+        return playerPoint = 0, compPoint = 0;
     };
     if (compPoint === 5) {
-        return alert("Computer Win");
+        console.log("Computer Win");
+        console.log(playerPoint, compPoint)
+        return playerPoint = 0, compPoint = 0;
     };
 }
 
@@ -25,41 +29,44 @@ function gameFinish() {
 // this function dictates the rule of the game
 function roundResult(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "Rock") {
-        alert("Tie! Rock");
+        console.log("Tie! Rock");
     } else if (playerSelection === "rock" && computerSelection === "Paper") {
-        alert("You Lose! Paper beats Rock");
+        console.log("You Lose! Paper beats Rock");
         compPoint += 1;
         gameFinish();
-        console.log(playerPoint, compPoint);
+        inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
     } else if (playerSelection === "rock" && computerSelection === "Scissors") {
-        alert("You Win! Rock crushes Scissors");
+        console.log("You Win! Rock crushes Scissors");
         playerPoint += 1;
         gameFinish();
-        console.log(playerPoint, compPoint)
+        inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
     } else if (playerSelection === "paper" && computerSelection === "Rock") {
-        alert("You Win! Paper suffocates Rock");
+        console.log("You Win! Paper suffocates Rock");
         playerPoint += 1;
         gameFinish();
-        console.log(playerPoint, compPoint)
-    } else if (playerSelection === "paper" && computerSelection === "Paper") {
-        alert("Tie! Paper");
+        inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
+        } else if (playerSelection === "paper" && computerSelection === "Paper") {
+        console.log("Tie! Paper");
     } else if (playerSelection === "paper" && computerSelection === "Scissors") {
-        alert("You Lose! Scissors cut Paper");
+        console.log("You Lose! Scissors cut Paper");
         compPoint += 1;
         gameFinish();
+        inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
         console.log(playerPoint, compPoint);
     } else if (playerSelection === "scissors" && computerSelection === "Rock") {
-        alert("You lose! Rock crushes Scissors")
+        console.log("You lose! Rock crushes Scissors")
         compPoint += 1;
         gameFinish();
+        inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
         console.log(playerPoint, compPoint);
     } else if (playerSelection === "scissors" && computerSelection === "Paper") {
-        alert("You Win! Scissors cut Paper")
+        console.log("You Win! Scissors cut Paper")
         playerPoint += 1;
         gameFinish();
+        inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
         console.log(playerPoint, compPoint)
     } else if (playerSelection === "scissors" && computerSelection === "Scissors") {
-        alert("Tie! Scissors");
+        console.log("Tie! Scissors");
     }
 }
 
@@ -67,12 +74,11 @@ function roundResult(playerSelection, computerSelection) {
 let playerPoint = 0;
 let compPoint = 0;
 
-
-const choices = document.querySelectorAll("buttons")
-
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+const inputPlayPoint = document.querySelector("#playPoint")
+const inputCpuPoint = document.querySelector("#cpuPoint")
 
 // step 3: we are looping the game and put the score outside the loop up until the player or comp meet the first 5 and it breaks the loop
 // this is the proper code to create infinite loop 
