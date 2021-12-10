@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +8,28 @@
     <title>Document</title>
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <header><h1>Rock Paper Scissors!</h1></header>
+    <header>
+        <h1>Rock Paper Scissors!</h1>
+    </header>
 
     <div>
-        <h4>The current score for player is <span id="playPoint">0</span> and computer is <span id="cpuPoint">0</span></h4>
+        <input type="image" id="rock" src="img/rock.png">
+        <input type="image" id="paper" src="img/paper.png">
+        <input type="image" id="scissors" src="img/scissors.png">
     </div>
 
     <div>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <div>
+            <h4><span id="statusBar">The current score for player is <span id="playPoint">0</span> and computer is
+                    <span id="cpuPoint">0</span></span></h4>
+        </div>
     </div>
 
+    <footer>
+        <p>Made with... no so much love</p>
+    </footer>
 </body>
+
 </html>

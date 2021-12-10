@@ -15,11 +15,12 @@ function computerPlay() {
 function gameFinish() {
     if (playerPoint === 5) {
         console.log("Player Win");
+        winningMsg.textContent = "You win! Your final score is " + playerPoint + " and the computer is " + compPoint + "."; 
         console.log(playerPoint, compPoint)
         return playerPoint = 0, compPoint = 0;
     };
     if (compPoint === 5) {
-        console.log("Computer Win");
+        winningMsg.textContent = "You Lose! Your final score is " + playerPoint + " and the computer is " + compPoint + ".";
         console.log(playerPoint, compPoint)
         return playerPoint = 0, compPoint = 0;
     };
@@ -79,6 +80,7 @@ const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 const inputPlayPoint = document.querySelector("#playPoint")
 const inputCpuPoint = document.querySelector("#cpuPoint")
+const winningMsg = document.querySelector("#statusBar")
 
 // step 3: we are looping the game and put the score outside the loop up until the player or comp meet the first 5 and it breaks the loop
 // this is the proper code to create infinite loop 
