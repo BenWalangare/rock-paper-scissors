@@ -1,4 +1,4 @@
-# rock-paper-scissors
+# Rock-Paper-Scissors
 
 ## Description
 Yes, this game has been played for generations, and it is also a cross-cultural
@@ -24,7 +24,7 @@ Here some of the methods I used to build this game:
 
 ## What's next?
 Next would be:
- - Displaying the computer's choice
+ - Displaying the computer's choice; the image of RPS
  - Adding animation when user hovers over the images
  - Better looks and feels, overhaul them
  - And lastly, Indonesian version of RPS; the "Pingsut"

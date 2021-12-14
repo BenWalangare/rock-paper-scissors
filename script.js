@@ -30,44 +30,44 @@ function gameFinish() {
 // this function dictates the rule of the game
 function roundResult(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "Rock") {
-        console.log("Tie! Rock");
+        roundMsg.textContent = "Tie! Rock";
     } else if (playerSelection === "rock" && computerSelection === "Paper") {
-        console.log("You Lose! Paper beats Rock");
+        roundMsg.textContent = "You Lose! Paper beats Rock";
         compPoint += 1;
         gameFinish();
         inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
     } else if (playerSelection === "rock" && computerSelection === "Scissors") {
-        console.log("You Win! Rock crushes Scissors");
+        roundMsg.textContent = "You Win! Rock crushes Scissors";
         playerPoint += 1;
         gameFinish();
         inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
     } else if (playerSelection === "paper" && computerSelection === "Rock") {
-        console.log("You Win! Paper suffocates Rock");
+        roundMsg.textContent = "You Win! Paper suffocates Rock";
         playerPoint += 1;
         gameFinish();
         inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
         } else if (playerSelection === "paper" && computerSelection === "Paper") {
         console.log("Tie! Paper");
     } else if (playerSelection === "paper" && computerSelection === "Scissors") {
-        console.log("You Lose! Scissors cut Paper");
+        roundMsg.textContent = "You Lose! Scissors cut Paper";
         compPoint += 1;
         gameFinish();
         inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
         console.log(playerPoint, compPoint);
     } else if (playerSelection === "scissors" && computerSelection === "Rock") {
-        console.log("You lose! Rock crushes Scissors")
+        roundMsg.textContent = "You lose! Rock crushes Scissors";
         compPoint += 1;
         gameFinish();
         inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
         console.log(playerPoint, compPoint);
     } else if (playerSelection === "scissors" && computerSelection === "Paper") {
-        console.log("You Win! Scissors cut Paper")
+        roundMsg.textContent = "You Win! Scissors cut Paper";
         playerPoint += 1;
         gameFinish();
         inputPlayPoint.textContent = playerPoint, inputCpuPoint.textContent = compPoint;
         console.log(playerPoint, compPoint)
     } else if (playerSelection === "scissors" && computerSelection === "Scissors") {
-        console.log("Tie! Scissors");
+        roundMsg.textContent = "Tie! Scissors";
     }
 }
 
