@@ -24,7 +24,9 @@ Here some of the methods I used to build this game:
 
 ## What's next?
 Next would be:
+ - Create separate html page for old js before adding UI
  - Displaying the computer's choice; the image of RPS
+ - Change the textMsg to borderless, so it won't confuse the player
  - Adding animation when user hovers over the images
  - Better looks and feels, overhaul them
  - And lastly, Indonesian version of RPS; the "Pingsut"
